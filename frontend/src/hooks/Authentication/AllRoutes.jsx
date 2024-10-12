@@ -13,19 +13,16 @@ import ForgotPassword from "../../components/Authentication/User/ForgotPassword"
 import ResetPassword from "../../components/Authentication/User/ResetPassword";
 import InvalidPage from "../../components/Authentication/User/InvalidPage";
 import ProfileSettings from "../../components/Authentication/User/ProfileSettings";
-// import Lobby from "../../components/Gameplay/LudoGame/Lobby";
-// import JoinRoom from "../../components/Gameplay/LudoGame/JoinRoom";
-// import CreatorPetName from "../../components/Gameplay/LudoGame/CreatorPetName";
-import CodeEditor from "../../components/CodeBlock/CodeEditor";
 import CodeEditorOuter from "../../components/CodeBlock/CodeEditorOuter";
 import JoinCodeEditorRoom from "../../components/CodeBlock/JoinCodeEditorRoom";
+import About from "../../components/Authentication/User/AboutSection/About";
+import UpgradeToPro from "../../components/Authentication/User/UpgradeSection/UpgradeToPro";
+import Courses from "../../components/Authentication/User/CoursesSection/Courses";
 
 function ProtectedRoute({ children }) {
   const isAuth = Cookies.get("is_auth") || localStorage.getItem("is_auth");
-  console.log(isAuth);
 
   if (isAuth !== "true") {
-    // Use strict equality
     return <Navigate to="/login" />;
   }
 
@@ -87,41 +84,46 @@ function AllRoutes() {
         <Route
           path="/profile-settings"
           element={
-            // <ProtectedRoute>
-            <ProfileSettings />
-            // </ProtectedRoute>
+            <ProtectedRoute>
+              <ProfileSettings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/join-code-editor-room"
+          element={
+            <ProtectedRoute>
+              <JoinCodeEditorRoom />
+            </ProtectedRoute>
+          }
+        />
+        {/* Code Editor */}
+        <Route
+          path="/code-editor"
+          element={
+            <ProtectedRoute>
+              <CodeEditorOuter />
+            </ProtectedRoute>
           }
         />
 
-        {/* GamePlay Routes */}
-        {/* Creator PetName section */}
-        {/* <Route path="/creator-pet-name/:room_id" element={<CreatorPetName />} /> */}
-        {/* <Route
-          path="/participent-pet-name/:room_id"
-          element={<CreatorPetName />}
-        /> */}
-
-        {/* change the path to "/gameplay/_game_name/lobby" */}
-        {/* <Route
-          path="/lobby"
+        <Route path="/about" element={<About />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route
+          path="/upgrade"
           element={
-            // <ProtectedRoute>
-            <Lobby />
-            // </ProtectedRoute>
+            <ProtectedRoute>
+              <UpgradeToPro />
+            </ProtectedRoute>
           }
-        /> */}
-
-        <Route path="/join-code-editor-room" element={<JoinCodeEditorRoom />} />
+        />
 
         {/* Fallback for invalid routes */}
         <Route path="*" element={<InvalidPage />} />
-
-        {/* Code Editor */}
-        <Route path="/code-editor" element={<CodeEditorOuter />} />
       </Routes>
 
-      {!isUserProfile && <Footer />}
-      {/* {!isProfileSettings && <Footer />} */}
+      {/* Conditionally render Footer */}
+      {!isUserProfile && !isProfileSettings && <Footer />}
     </div>
   );
 }
