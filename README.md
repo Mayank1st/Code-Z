@@ -41,6 +41,13 @@
 ## Screenshots
 
 Add screenshots of the application showing key features, such as the code editor, collaboration interface, AI code suggestions, etc.
+![image](https://github.com/user-attachments/assets/b645e0e1-2dc4-4360-bb74-80aaba8d5bd7)
+
+![image](https://github.com/user-attachments/assets/a63a6041-65b3-4329-b363-121c39f96cb0)
+
+![image](https://github.com/user-attachments/assets/43415fac-4999-4f72-92d4-ec796c32402d)
+
+
 
 ---
 
