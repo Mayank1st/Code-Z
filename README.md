@@ -1,7 +1,3 @@
-To enhance your README with icons, you can use markdown and leverage image links from reliable sources (like Shields.io) to add relevant icons for each technology. Here’s the updated version with icons:
-
----
-
 # Code-Z
 
 **Code-Z** is a collaborative coding platform where users can write code and invite friends for real-time collaboration. Built using **React**, **MongoDB Atlas**, **Gemini AI**, **Socket.IO**, **Node.js**, and **Chakra UI**, it offers seamless project collaboration and code generation functionalities.
