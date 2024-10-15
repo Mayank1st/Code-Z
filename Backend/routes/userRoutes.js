@@ -51,17 +51,17 @@ router.post(
 // Coding Room Protected routes
 router.post(
   "/room/create",
-  // accessTokenAutoRefresh,
-  // passport.authenticate("jwt", { session: false }),
+  accessTokenAutoRefresh,
+  passport.authenticate("jwt", { session: false }),
   codeRoomController.createRoom
 );
 
 // Route to invite participants to a room
 router.post(
   "/room/:roomId/invite",
-  // accessTokenAutoRefresh,
-  // passport.authenticate("jwt", { session: false }), 
-  codeRoomController.inviteParticipants 
+  accessTokenAutoRefresh,
+  passport.authenticate("jwt", { session: false }),
+  codeRoomController.inviteParticipants
 );
 
 export default router;
