@@ -39,6 +39,7 @@ import { Formik, Form, Field } from "formik";
 import { io } from "socket.io-client";
 import { FaCopy } from "react-icons/fa";
 import { useClipboard } from "@chakra-ui/react";
+import axiosInstance from "../../utils/axiosInstance";
 const CodeEditor = () => {
   const editorRef = useRef();
   const [value, setValue] = useState("");
@@ -125,8 +126,8 @@ const CodeEditor = () => {
   const handleSendMessage = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/user/generate-content",
+      const response = await axiosInstance.post(
+        "/user/generate-content",
         {
           prompt: userMessage,
         }
@@ -145,8 +146,8 @@ const CodeEditor = () => {
   const handleInvite = async (values, { setSubmitting }) => {
     setInviting(true);
     try {
-      const response = await axios.post(
-        `http://localhost:8000/api/user/room/${roomId}/invite`,
+      const response = await axiosInstance.post(
+        `/user/room/${roomId}/invite`,
         {
           invitees: [values.email],
         },
@@ -176,7 +177,7 @@ const CodeEditor = () => {
   };
 
   // Socket Connection
-  const socket = useMemo(() => io("http://localhost:8000"), []);
+  const socket = useMemo(() => io("http://https://code-z-s4gj.onrender.com"), []);
 
   useEffect(() => {
     try {

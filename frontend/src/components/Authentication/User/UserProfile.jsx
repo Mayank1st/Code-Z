@@ -45,7 +45,7 @@ export default function UserProfile() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [userData, setUserData] = useState([]);
-  const [selectedItem, setSelectedItem] = useState("CreateRoom");
+  const [selectedItem, setSelectedItem] = useState("IDE");
 
   useEffect(() => {
     async function fetchData() {
@@ -84,11 +84,11 @@ export default function UserProfile() {
     case "Friends List":
       mainContent = <FriendsListComponent />;
       break;
-    case "Leaderboard":
+    case "IDE":
       mainContent = <LeaderboardComponent />;
       break;
     default:
-      mainContent = <CreateRoomComponent />;
+      mainContent = <LeaderboardComponent />;
   }
 
   return (
@@ -208,7 +208,7 @@ const SidebarContent = ({ handleLogout, onSelect, ...props }) => (
             Friends List
           </NavItem>
           <NavItem icon={AiOutlineTrophy} onSelect={onSelect}>
-            Leaderboard
+            IDE
           </NavItem>
         </Flex>
       </Box>
@@ -291,9 +291,7 @@ const CreateRoomComponent = () => {
       >
         Create Room
       </Heading>
-      <div className="create-room-main-div p-1">
-        {/* <CreateRoom /> */}
-      </div>
+      <div className="create-room-main-div p-1">{/* <CreateRoom /> */}</div>
     </Box>
   );
 };
@@ -325,7 +323,7 @@ const FriendsListComponent = () => (
 
 const LeaderboardComponent = () => (
   <Box>
-    <Heading size="lg">Leaderboard</Heading>
+    <Heading size="lg">IDE</Heading>
     <div className="codeBlock-list-main-div">
       <CodeIDE />
     </div>

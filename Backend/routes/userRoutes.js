@@ -51,7 +51,7 @@ router.post(
 // Coding Room Protected routes
 router.post(
   "/room/create",
-  accessTokenAutoRefresh,
+  // accessTokenAutoRefresh,
   passport.authenticate("jwt", { session: false }),
   codeRoomController.createRoom
 );
@@ -59,7 +59,7 @@ router.post(
 // Route to invite participants to a room
 router.post(
   "/room/:roomId/invite",
-  accessTokenAutoRefresh,
+  // accessTokenAutoRefresh,
   passport.authenticate("jwt", { session: false }), 
   codeRoomController.inviteParticipants 
 );

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button, Spinner } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import axiosInstance from "../../utils/axiosInstance";
 
 function RedirectToCodeEditor() {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,8 +12,8 @@ function RedirectToCodeEditor() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/api/user/room/create",
+      const response = await axiosInstance.post(
+        "/user/room/create",
         {},
         { withCredentials: true }
       );

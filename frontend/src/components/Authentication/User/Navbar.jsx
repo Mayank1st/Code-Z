@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Flex,
@@ -144,7 +144,7 @@ const Navbar = () => {
 
   // Google login handler
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:8000/auth/google";
+    window.location.href = "http://code-z-s4gj.onrender.com/auth/google";
   };
 
   useEffect(() => {

@@ -7,7 +7,7 @@ import { io } from "socket.io-client";
 const JoinCodeEditorRoom = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const socket = useMemo(() => io("http://localhost:8000"), []); // Use useMemo for socket
+  const socket = useMemo(() => io("http://https://code-z-s4gj.onrender.com"), []); // Use useMemo for socket
 
   // Function to get query parameters
   const getQueryParams = (search) => {
