@@ -52,7 +52,7 @@ router.post(
 router.post(
   "/room/create",
   // accessTokenAutoRefresh,
-  passport.authenticate("jwt", { session: false }),
+  // passport.authenticate("jwt", { session: false }),
   codeRoomController.createRoom
 );
 
@@ -60,7 +60,7 @@ router.post(
 router.post(
   "/room/:roomId/invite",
   // accessTokenAutoRefresh,
-  passport.authenticate("jwt", { session: false }), 
+  // passport.authenticate("jwt", { session: false }), 
   codeRoomController.inviteParticipants 
 );
 

@@ -15,7 +15,7 @@ function RedirectToCodeEditor() {
       const response = await axiosInstance.post(
         "/user/room/create",
         {},
-        { withCredentials: true }
+        // { withCredentials: true }
       );
 
       console.log(response);
