@@ -38,7 +38,6 @@ import axiosInstance from "../../../utils/axiosInstance";
 import Games from "../../Gameplay/GameList/games";
 import Achivements from "../../Gameplay/AchivementsList/Achivements";
 import { BiGroup } from "react-icons/bi";
-// import CreateRoom from "../../Gameplay/LudoGame/CreateRoom";
 import CodeIDE from "../../CodeBlock/RedirectToCodeEditor";
 
 export default function UserProfile() {
