@@ -35,8 +35,8 @@
 
 ### Deployment:
 
-- **Frontend**: ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
-- **Backend**: ![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white)
+- **Frontend**: ![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white) (https://code-z-cw.netlify.app/)
+- **Backend**: ![Render](https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=white) (https://code-z-s4gj.onrender.com)
 
 ## Screenshots
 
